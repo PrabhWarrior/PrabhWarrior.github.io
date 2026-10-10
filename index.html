@@ -64,14 +64,14 @@
   </section>
 
   <section class="card metrics" aria-label="Highlights">
-    <div><b data-count="329" data-suffix="k">329k</b><span>records/s, quota runtime</span></div>
-    <div><b data-count="6.5" data-decimals="1" data-suffix="s">6.5s</b><span>to process 1M records</span></div>
-    <div><b data-count="93" data-suffix="%">93%</b><span>API latency cut</span></div>
-    <div><b data-count="33" data-suffix="%">33%</b><span>throughput gain from tuning</span></div>
+    <div><b data-count="329" data-suffix="k">329k</b><span>records/s, quota runtime<small>64 partitions on Redpanda, production-mode settings</small></span></div>
+    <div><b data-count="6.5" data-decimals="1" data-suffix="s">6.5s</b><span>to process 1M records<small>Kafka into ClickHouse, about 154k msg/s</small></span></div>
+    <div><b data-count="93" data-suffix="%">93%</b><span>API latency cut<small>7s to 480ms by removing N+1 queries</small></span></div>
+    <div><b data-count="33" data-suffix="%">33%</b><span>ETL throughput gain<small>from batch size and connection-pool tuning</small></span></div>
   </section>
 
   <section class="card work" id="work">
-    <p class="mini">Selected work</p>
+    <p class="mini">Work</p>
     <ul class="proj">
       <li><h3>Quota runtime</h3><p>Partition-owned runtime on Redpanda with embedded Pebble state, replacing Redis, Lua and NATS. 329k records/s across 64 partitions, crash-safe via outbox and dedup.</p><ul class="facts"><li>Redpanda</li><li>Pebble</li><li>Kubernetes</li></ul></li>
       <li><h3>Multi-pipeline ETL engine</h3><p>Fluentd alternative with YAML pipelines from Kafka, Redpanda or NATS into ClickHouse, PostgreSQL or MongoDB. 1M records in 6.5s, 33% faster after tuning.</p><ul class="facts"><li>Kafka</li><li>ClickHouse</li><li>KEDA</li></ul></li>
