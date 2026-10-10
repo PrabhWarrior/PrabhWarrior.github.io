@@ -88,10 +88,69 @@ document.addEventListener('click', function (evt) {
         io.unobserve(en.target);
       });
     }, { threshold: 0.15 });
-    document.querySelectorAll('.section, .metrics').forEach(function (el) { el.classList.add('reveal'); io.observe(el); });
+    document.querySelectorAll('.card').forEach(function (el) { el.classList.add('reveal'); io.observe(el); });
   }
 
   function init() { startStream(); observe(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
   document.addEventListener('htmx:afterSettle', init);
 })();
+
+// Live local-time widget.
+(function () {
+  function tick() {
+    document.querySelectorAll('.time[data-tz]').forEach(function (el) {
+      try { el.textContent = new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: el.dataset.tz }); } catch (e) {}
+    });
+  }
+  tick(); setInterval(tick, 15000);
+  document.addEventListener('htmx:afterSettle', tick);
+})();
+
+// Clickable pipeline stages in the system design card.
+document.addEventListener('click', function (evt) {
+  var btn = evt.target.closest && evt.target.closest('.arch button[data-step]');
+  if (!btn) return;
+  var card = btn.closest('.sys');
+  var tpl = card.querySelector('template[data-step="' + btn.dataset.step + '"]');
+  var info = card.querySelector('.arch-info');
+  if (!tpl || !info) return;
+  card.querySelectorAll('.arch button').forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+  info.innerHTML = tpl.innerHTML;
+});
+
+// System design category tabs (click and arrow keys).
+(function () {
+  function select(tab) {
+    var list = tab.closest('[role="tablist"]');
+    list.querySelectorAll('[role="tab"]').forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      if (panel) panel.hidden = !on;
+    });
+    tab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }
+  document.addEventListener('click', function (evt) {
+    var tab = evt.target.closest && evt.target.closest('.sd-tabs [role="tab"]');
+    if (tab) select(tab);
+  });
+  document.addEventListener('keydown', function (evt) {
+    var tab = evt.target.closest && evt.target.closest('.sd-tabs [role="tab"]');
+    if (!tab || (evt.key !== 'ArrowRight' && evt.key !== 'ArrowLeft')) return;
+    var tabs = Array.prototype.slice.call(tab.parentNode.children);
+    var i = tabs.indexOf(tab) + (evt.key === 'ArrowRight' ? 1 : -1);
+    var next = tabs[(i + tabs.length) % tabs.length];
+    select(next); next.focus(); evt.preventDefault();
+  });
+})();
+
+// Switch between the systems shown in the system design card.
+document.addEventListener('click', function (evt) {
+  var btn = evt.target.closest && evt.target.closest('.sys-switch button[data-sys]');
+  if (!btn) return;
+  var card = btn.closest('.card');
+  card.querySelectorAll('.sys-switch button').forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+  card.querySelectorAll('.sys[data-sys]').forEach(function (el) { el.hidden = el.dataset.sys !== btn.dataset.sys; });
+});
