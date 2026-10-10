@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="wrap" hx-boost="true" hx-target="#page" hx-select="#page" hx-swap="outerHTML show:window:top">
-<header class="top">
+<header class="top" id="top">
   <a class="brand" href="index.html">Prabhkirat Singh</a>
   <nav class="nav" aria-label="Main">
     <a href="index.html#about">About</a>
@@ -32,9 +32,8 @@
     <div class="hello">
       <span class="avatar-wrap"><img class="avatar" src="assets/avatar.png" width="305" height="338" alt="Memoji of Prabhkirat in a grey turban giving a thumbs up"></span>
       <span class="bubble" aria-hidden="true">Hi! 👋</span>
-      <p class="mini">welcome</p>
     </div>
-    <h1>Hi, I'm <span>Prabhkirat Singh</span>.</h1>
+    <h1>I'm <span>Prabhkirat Singh</span>.</h1>
     <p class="role">Full-Stack, Backend at Heart</p>
         <div class="row">
       <a class="btn primary" href="#contact">Get in touch</a>
@@ -60,14 +59,14 @@
     <p class="mini">Education</p>
     <h2>B.Tech, IT</h2>
     <p class="muted">GNDEC Ludhiana · 2024</p>
-    <p class="gpa"><b>8.7</b> / 10</p>
+    <p class="gpa"><b>8.7</b> / 10 CGPA</p>
   </section>
 
   <section class="card metrics" aria-label="Highlights">
-    <div><b data-count="329" data-suffix="k">329k</b><span>records/s, quota runtime<small>64 partitions on Redpanda, production-mode settings</small></span></div>
-    <div><b data-count="6.5" data-decimals="1" data-suffix="s">6.5s</b><span>to process 1M records<small>Kafka into ClickHouse, about 154k msg/s</small></span></div>
-    <div><b data-count="93" data-suffix="%">93%</b><span>API latency cut<small>7s to 480ms by removing N+1 queries</small></span></div>
-    <div><b data-count="33" data-suffix="%">33%</b><span>ETL throughput gain<small>from batch size and connection-pool tuning</small></span></div>
+    <div><b data-count="329" data-suffix="k">329k</b> <span>records/s, quota runtime<span class="sr-only">. </span><small>64 partitions on Redpanda, production-mode settings</small></span></div>
+    <div><b data-count="6.5" data-decimals="1" data-suffix="s">6.5s</b> <span>to process 1M records<span class="sr-only">. </span><small>Kafka into ClickHouse, about 154k msg/s</small></span></div>
+    <div><b data-count="93" data-suffix="%">93%</b> <span>API latency cut<span class="sr-only">. </span><small>7s to 480ms by removing N+1 queries</small></span></div>
+    <div><b data-count="33" data-suffix="%">33%</b> <span>ETL throughput gain<span class="sr-only">. </span><small>from batch size and connection-pool tuning</small></span></div>
   </section>
 
   <section class="card exp" id="experience">
@@ -94,12 +93,12 @@
     <p class="mini">Stack &amp; tools</p>
     <div class="sgs">
         <div class="sg"><p class="mini">Languages</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/go);--c:#00ADD8" aria-hidden="true"></span><span>Go</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/typescript);--c:#3178C6" aria-hidden="true"></span><span>TypeScript</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/javascript);--c:#E8C600" aria-hidden="true"></span><span>JavaScript</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/python);--c:#3776AB" aria-hidden="true"></span><span>Python</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/cplusplus);--c:#00599C" aria-hidden="true"></span><span>C++</span></li></ul></div>
-        <div class="sg"><p class="mini">Services and UI</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/nodedotjs);--c:#5FA04E" aria-hidden="true"></span><span>Node.js</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/express)" aria-hidden="true"></span><span>Express</span></li><li><span class="mono-icon" style="--c:#00ACD7" aria-hidden="true">Fi</span><span>Fiber</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/react);--c:#149ECA" aria-hidden="true"></span><span>React</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/tailwindcss);--c:#06B6D4" aria-hidden="true"></span><span>Tailwind</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/socketdotio)" aria-hidden="true"></span><span>Socket.IO</span></li></ul></div>
-        <div class="sg"><p class="mini">Streaming</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/apachekafka)" aria-hidden="true"></span><span>Kafka</span></li><li><span class="mono-icon" style="--c:#E2401B" aria-hidden="true">Rp</span><span>Redpanda</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/natsdotio);--c:#27AAE1" aria-hidden="true"></span><span>NATS</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/googlepubsub);--c:#4285F4" aria-hidden="true"></span><span>Pub/Sub</span></li><li><span class="mono-icon" style="--c:#E0234E" aria-hidden="true">Bq</span><span>BullMQ</span></li><li><span class="mono-icon" style="--c:#4285F4" aria-hidden="true">Pb</span><span>Protobuf</span></li></ul></div>
-        <div class="sg"><p class="mini">Data</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/postgresql);--c:#4169E1" aria-hidden="true"></span><span>PostgreSQL</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/clickhouse);--c:#E8B800" aria-hidden="true"></span><span>ClickHouse</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/mongodb);--c:#47A248" aria-hidden="true"></span><span>MongoDB</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/redis);--c:#FF4438" aria-hidden="true"></span><span>Redis</span></li><li><span class="mono-icon" style="--c:#8A63D2" aria-hidden="true">Pe</span><span>Pebble</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/prisma)" aria-hidden="true"></span><span>Prisma</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/sequelize);--c:#52B0E7" aria-hidden="true"></span><span>Sequelize</span></li></ul></div>
-        <div class="sg"><p class="mini">Auth</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/jsonwebtokens)" aria-hidden="true"></span><span>JWT</span></li><li><span class="mono-icon" style="--c:#EB5424" aria-hidden="true">OA</span><span>OAuth 2.0</span></li><li><span class="mono-icon" style="--c:#DD344C" aria-hidden="true">Co</span><span>Cognito</span></li></ul></div>
-        <div class="sg"><p class="mini">Infra and observability</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/kubernetes);--c:#326CE5" aria-hidden="true"></span><span>Kubernetes</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/docker);--c:#2496ED" aria-hidden="true"></span><span>Docker</span></li><li><span class="mono-icon" style="--c:#FF9900" aria-hidden="true">AWS</span><span>AWS</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/nginx);--c:#009639" aria-hidden="true"></span><span>Nginx</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/prometheus);--c:#E6522C" aria-hidden="true"></span><span>Prometheus</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/grafana);--c:#F46800" aria-hidden="true"></span><span>Grafana</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/git);--c:#F05032" aria-hidden="true"></span><span>Git</span></li></ul></div>
-        <div class="sg"><p class="mini">AI pair-programming</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/claude);--c:#D97757" aria-hidden="true"></span><span>Claude</span></li><li><span class="mono-icon" style="--c:#10A37F" aria-hidden="true">Cx</span><span>Codex</span></li></ul></div>
+        <div class="sg"><p class="mini">Services and UI</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/nodedotjs);--c:#5FA04E" aria-hidden="true"></span><span>Node.js</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/express)" aria-hidden="true"></span><span>Express</span></li><li><span class="mono-icon" style="--c:#00ACD7" data-mono="Fi" aria-hidden="true"></span><span>Fiber</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/react);--c:#149ECA" aria-hidden="true"></span><span>React</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/tailwindcss);--c:#06B6D4" aria-hidden="true"></span><span>Tailwind</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/socketdotio)" aria-hidden="true"></span><span>Socket.IO</span></li></ul></div>
+        <div class="sg"><p class="mini">Streaming</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/apachekafka)" aria-hidden="true"></span><span>Kafka</span></li><li><span class="mono-icon" style="--c:#E2401B" data-mono="Rp" aria-hidden="true"></span><span>Redpanda</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/natsdotio);--c:#27AAE1" aria-hidden="true"></span><span>NATS</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/googlepubsub);--c:#4285F4" aria-hidden="true"></span><span>Pub/Sub</span></li><li><span class="mono-icon" style="--c:#E0234E" data-mono="Bq" aria-hidden="true"></span><span>BullMQ</span></li><li><span class="mono-icon" style="--c:#4285F4" data-mono="Pb" aria-hidden="true"></span><span>Protobuf</span></li></ul></div>
+        <div class="sg"><p class="mini">Data</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/postgresql);--c:#4169E1" aria-hidden="true"></span><span>PostgreSQL</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/clickhouse);--c:#E8B800" aria-hidden="true"></span><span>ClickHouse</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/mongodb);--c:#47A248" aria-hidden="true"></span><span>MongoDB</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/redis);--c:#FF4438" aria-hidden="true"></span><span>Redis</span></li><li><span class="mono-icon" style="--c:#8A63D2" data-mono="Pe" aria-hidden="true"></span><span>Pebble</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/prisma)" aria-hidden="true"></span><span>Prisma</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/sequelize);--c:#52B0E7" aria-hidden="true"></span><span>Sequelize</span></li></ul></div>
+        <div class="sg"><p class="mini">Auth</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/jsonwebtokens)" aria-hidden="true"></span><span>JWT</span></li><li><span class="mono-icon" style="--c:#EB5424" data-mono="OA" aria-hidden="true"></span><span>OAuth 2.0</span></li><li><span class="mono-icon" style="--c:#DD344C" data-mono="Co" aria-hidden="true"></span><span>Cognito</span></li></ul></div>
+        <div class="sg"><p class="mini">Infra and observability</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/kubernetes);--c:#326CE5" aria-hidden="true"></span><span>Kubernetes</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/docker);--c:#2496ED" aria-hidden="true"></span><span>Docker</span></li><li><span class="mono-icon" style="--c:#FF9900" data-mono="AWS" aria-hidden="true"></span><span>AWS</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/nginx);--c:#009639" aria-hidden="true"></span><span>Nginx</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/prometheus);--c:#E6522C" aria-hidden="true"></span><span>Prometheus</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/grafana);--c:#F46800" aria-hidden="true"></span><span>Grafana</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/git);--c:#F05032" aria-hidden="true"></span><span>Git</span></li></ul></div>
+        <div class="sg"><p class="mini">AI pair-programming</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/claude);--c:#D97757" aria-hidden="true"></span><span>Claude</span></li><li><span class="mono-icon" style="--c:#10A37F" data-mono="Cx" aria-hidden="true"></span><span>Codex</span></li></ul></div>
     </div>
   </section>
 
@@ -120,7 +119,7 @@
 </main>
 <footer class="foot">
   <span>© 2026 Prabhkirat Singh</span>
-  <a href="#page" class="to-top">Back to top ↑</a>
+  <a href="#top" class="to-top">Back to top ↑</a>
 </footer>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/2.0.4/htmx.min.js"></script>
