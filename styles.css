@@ -477,3 +477,7 @@ th { font-family: var(--font-mono); font-size: 12.5px; font-weight: 500; letter-
   .card.exp .tl li:first-child { border-top: 0; padding-top: 0; }
   .cta { grid-column: auto; }
 }
+.card.exp .tl .mono { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--fg); letter-spacing: .01em; }
+.card.exp .tl .mono::before { content: ""; width: 8px; height: 8px; border-radius: 50%; border: 2px solid var(--accent); flex-shrink: 0; }
+.card.exp .tl li.on .mono { color: var(--accent); }
+.card.exp .tl li.on .mono::before { background: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent); }
