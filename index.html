@@ -70,12 +70,22 @@
     <div><b data-count="33" data-suffix="%">33%</b><span>ETL throughput gain<small>from batch size and connection-pool tuning</small></span></div>
   </section>
 
+  <section class="card exp" id="experience">
+    <p class="mini">Experience</p>
+    <ol class="tl">
+      <li class="on"><span class="mono">Apr 2026 – Present</span><div><h3>Software Engineer <em>Sechpoint</em></h3><p>Designed a crash-safe quota runtime (Redpanda, Pebble, outbox) and a plugin ETL engine (Kafka/NATS → ClickHouse, backpressure, DLQ) on Kubernetes + KEDA.</p></div></li>
+      <li><span class="mono">Nov 2025 – Mar 2026</span><div><h3>Solution Engineer <em>GammaStack</em></h3><p>Casino and wallet microservices for thousands of concurrent users: REST and Socket.IO for auth, payments, cashback and push, on Redis + BullMQ. Hub88, FastGaming and Tequity via secure webhooks; React on the front end.</p></div></li>
+      <li><span class="mono">Jan 2024 – Oct 2025</span><div><h3>Associate SE <em>Wits Innovation Lab</em></h3><p>ONDC buyer app: API latency 7s → 480ms (N+1 fix), hierarchical RBAC, Razorpay with retries, encrypted KYC on S3, Pub/Sub, React + Tailwind. Led a team of 4.</p></div></li>
+      <li><span class="mono">Oct 2022 – Jun 2024</span><div><h3>Tech Team Lead <em>T&amp;P Cell, GNDEC</em></h3><p>Built the cell's tools in React and MySQL as an intern, then led the technical team.</p></div></li>
+    </ol>
+  </section>
+
   <section class="card work" id="work">
     <p class="mini">Work</p>
     <ul class="proj">
       <li><h3>Quota runtime</h3><p>Partition-owned runtime on Redpanda with embedded Pebble state, replacing Redis, Lua and NATS. 329k records/s across 64 partitions, crash-safe via outbox and dedup.</p><ul class="facts"><li>Redpanda</li><li>Pebble</li><li>Kubernetes</li></ul></li>
       <li><h3>Multi-pipeline ETL engine</h3><p>Fluentd alternative with YAML pipelines from Kafka, Redpanda or NATS into ClickHouse, PostgreSQL or MongoDB. 1M records in 6.5s, 33% faster after tuning.</p><ul class="facts"><li>Kafka</li><li>ClickHouse</li><li>KEDA</li></ul></li>
-      <li><h3>ONDC integration</h3><p>Services linking a seller platform to ONDC over the Beckn Protocol, with MongoDB and PostgreSQL kept in sync.</p><ul class="facts"><li><a href="https://himira.co.in/" target="_blank" rel="noopener">Live on Himira ↗</a></li><li>Pub/Sub</li></ul></li>
+      <li><h3>ONDC integration</h3><p>Buyer–seller microservices on India's government-backed ONDC network (Beckn Protocol). Event-driven on Pub/Sub, Zlib-compressed multi-seller search, MongoDB ↔ PostgreSQL sync pipelines, monitored in Grafana.</p><ul class="facts"><li><a href="https://himira.co.in/" target="_blank" rel="noopener">Live on Himira ↗</a></li><li>Pub/Sub</li><li>Grafana</li></ul></li>
       <li><h3>iGaming services</h3><p>Wallets, payments and cashback for casino platforms, with live updates over WebSockets and external game providers wired in via webhooks.</p><ul class="facts"><li>WebSockets</li><li>Redis</li><li>BullMQ</li></ul></li>
     </ul>
   </section>
@@ -91,16 +101,6 @@
         <div class="sg"><p class="mini">Infra and observability</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/kubernetes);--c:#326CE5" aria-hidden="true"></span><span>Kubernetes</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/docker);--c:#2496ED" aria-hidden="true"></span><span>Docker</span></li><li><span class="mono-icon" style="--c:#FF9900" aria-hidden="true">AWS</span><span>AWS</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/nginx);--c:#009639" aria-hidden="true"></span><span>Nginx</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/prometheus);--c:#E6522C" aria-hidden="true"></span><span>Prometheus</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/grafana);--c:#F46800" aria-hidden="true"></span><span>Grafana</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/git);--c:#F05032" aria-hidden="true"></span><span>Git</span></li></ul></div>
         <div class="sg"><p class="mini">AI pair-programming</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/claude);--c:#D97757" aria-hidden="true"></span><span>Claude</span></li><li><span class="mono-icon" style="--c:#10A37F" aria-hidden="true">Cx</span><span>Codex</span></li></ul></div>
     </div>
-  </section>
-
-  <section class="card exp" id="experience">
-    <p class="mini">Experience</p>
-    <ol class="tl">
-      <li class="on"><span class="mono">Apr 2026<br>– Present</span><div><h3>Software Engineer <em>Sechpoint</em></h3><p>Designed the new quota runtime and built the company-wide ETL engine, both on Kubernetes.</p></div></li>
-      <li><span class="mono">Nov 2025<br>– Mar 2026</span><div><h3>Solution Engineer <em>GammaStack</em></h3><p>Services for payments and live player updates, with BullMQ jobs and Redis caching.</p></div></li>
-      <li><span class="mono">Jan 2024<br>– Oct 2025</span><div><h3>Associate SE <em>Wits Innovation Lab</em></h3><p>ONDC buyer app: token sessions, Razorpay payments and refunds, query tuning. Led a team of 4.</p></div></li>
-      <li><span class="mono">Oct 2022<br>– Jun 2024</span><div><h3>Tech Team Lead <em>T&amp;P Cell, GNDEC</em></h3><p>Built the cell's tools in React and MySQL as an intern, then led the technical team.</p></div></li>
-    </ol>
   </section>
 
   <section class="card cta" id="contact">
