@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prabhkirat Singh&#x27;s Portfolio</title>
+<meta name="description" content="Prabhkirat Singh is a backend-focused full-stack engineer in Bengaluru who designs and ships distributed systems: APIs, event pipelines, data stores and infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap" hx-boost="true" hx-target="#page" hx-select="#page" hx-swap="outerHTML show:window:top">
+<header class="top">
+  <a class="brand" href="index.html">Prabhkirat Singh</a>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html#about">About</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#contact">Contact</a>
+    <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch theme"><span aria-hidden="true"></span></button>
+  </nav>
+</header>
+<main id="page">
+<section class="hero">
+  <canvas class="stream" aria-hidden="true"></canvas>
+  <div class="hero-copy">
+    <p class="label">Prabhkirat Singh · Full-stack engineer, backend at heart · Bengaluru</p>
+    <h1>I build backend systems that <span>scale out, survive failure, and recover cleanly.</span></h1>
+    <p class="lede">Nearly three years building production backends in Go, Node.js and TypeScript, with a bias toward fault-tolerant, scalable design: event-driven pipelines, crash-safe state, and services that degrade gracefully instead of falling over. Across telecom, iGaming and open commerce.</p>
+    <div class="row">
+      <a class="btn primary" href="#work">See the work</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </div>
+  <dl class="spec">
+    <div><dt class="label">Role</dt><dd>Software Engineer, Sechpoint</dd></div>
+    <div><dt class="label">Based in</dt><dd>Bengaluru, India</dd></div>
+    <div><dt class="label">Building since</dt><dd>January 2024</dd></div>
+    <div><dt class="label">Domains</dt><dd>Telecom, iGaming, ONDC commerce</dd></div>
+    <div><dt class="label">Open to</dt><dd>Backend, platform and full-stack roles, relocation or remote</dd></div>
+  </dl>
+</section>
+
+
+<section class="metrics" aria-label="Highlights">
+  <div><b data-count="329" data-suffix="k">329k</b><span>records per second, quota runtime on Redpanda</span></div>
+  <div><b data-count="6.5" data-decimals="1" data-suffix="s">6.5s</b><span>to process 1 million records into ClickHouse, about 154k msg/s</span></div>
+  <div><b data-count="93" data-suffix="%">93%</b><span>API latency cut, 7s down to 480ms</span></div>
+  <div><b data-count="33" data-suffix="%">33%</b><span>throughput gain from batch and connection-pool tuning</span></div>
+</section>
+
+<section class="section" id="about">
+  <p class="label">About me</p>
+  <div class="section-body">
+    <h2>I like the parts of a system nobody sees until they break.</h2>
+    <p>Most of my work happens below the API: queues, consumers, storage, and the failure cases in between. Right now that means telecom-scale streaming at Sechpoint, where a dropped or double-counted event is real money, so I spend as much time on crash recovery and honest benchmarks as on the happy path.</p>
+    <p>Before that I shipped payment flows, wallets and access control for iGaming and SaaS products, which taught me to care about the boring things: idempotency, retries, and queries that stay fast as data grows. I've built the React front ends for those features too, so I can take something end to end, but the backend is where I do my best work. I lean on Claude and Codex as daily pair-programmers, but the design calls are still mine.</p>
+  </div>
+</section>
+
+<section class="section" id="principles">
+  <p class="label">How I build</p>
+  <div class="section-body">
+    <h2>Designing for the bad day, not the demo</h2>
+    <p>I assume pods will crash, brokers will rebalance and networks will drop requests, and I design so none of that loses data or wakes anyone up.</p>
+    <ol class="principles">
+      <li>
+        <h3>Fault tolerant by default</h3>
+        <p>Transactional outbox with a strict commit order, at-least-once delivery with deduplication, and every pipeline tested against pod crashes, OOM kills and rebalances.</p>
+      </li>
+      <li>
+        <h3>Scale by partitioning</h3>
+        <p>Partition-owned processing so work scales horizontally without shared locks, plus lag-based autoscaling with KEDA and stable group membership across restarts.</p>
+      </li>
+      <li>
+        <h3>Robust under pressure</h3>
+        <p>Backpressure through bounded queues, retries with exponential backoff, dead-letter routing and idempotent handlers, so a slow dependency can't take the system down.</p>
+      </li>
+      <li>
+        <h3>Measure honestly</h3>
+        <p>Benchmarks under production settings, not developer defaults. I once found our throughput numbers were inflated because fsync was being skipped, and fixed the test before trusting the result.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="what">
+  <p class="label">What I do</p>
+  <div class="section-body">
+    <h2>Four areas I work in every week</h2>
+    <ul class="areas">
+      <li>
+        <h3>APIs and microservices</h3>
+        <p>REST APIs and services in Node.js, TypeScript and Go (Fiber), secured with OAuth2, JWT, role-based access and single sign-on through Amazon Cognito.</p>
+      </li>
+      <li>
+        <h3>Event-driven systems</h3>
+        <p>Kafka, Redpanda, NATS JetStream, Google Pub/Sub and BullMQ. Crash-safe consumers, transactional outbox, deduplication and partition-owned processing.</p>
+      </li>
+      <li>
+        <h3>Data and storage</h3>
+        <p>PostgreSQL, MongoDB, Redis and ClickHouse in production, embedded Pebble for hot-path state, and keeping separate stores in sync.</p>
+      </li>
+      <li>
+        <h3>Platform and delivery</h3>
+        <p>Docker, Kubernetes with KEDA autoscaling, AWS, Nginx and CI/CD. I benchmark under production-like conditions before I trust a number.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <p class="label">Selected work</p>
+  <div class="section-body">
+    <h2>Systems I've designed and built</h2>
+    <ul class="work">
+      <li>
+        <div class="work-item">
+          <div>
+            <h3>A partition-owned quota runtime</h3>
+            <p>Rebuilt a telecom quota hot path from Redis and Lua into a Go runtime on Redpanda with embedded storage. Crash-safe by design.</p>
+            <ul class="facts"><li>329k records/s</li><li>64 partitions</li></ul>
+          </div>
+          <div class="work-meta mono"><strong>Telecom</strong><span>Go · Redpanda · Pebble</span></div>
+        </div>
+      </li>
+      <li>
+        <div class="work-item">
+          <div>
+            <h3>A multi-pipeline ETL engine</h3>
+            <p>Our own Fluentd alternative in Go: many YAML-defined pipelines from Kafka and NATS into ClickHouse, with backpressure handling, ordered processing, retries and dead-letter routing built in.</p>
+            <ul class="facts"><li>1M records in 6.5s</li><li>Zero loss in crash tests</li></ul>
+          </div>
+          <div class="work-meta mono"><strong>Data platform</strong><span>Go · Kafka · ClickHouse</span></div>
+        </div>
+      </li>
+      <li>
+        <div class="work-item">
+          <div>
+            <h3>ONDC integration over the Beckn Protocol</h3>
+            <p>Node.js and Go microservices that connect a seller platform to India's open commerce network through Google Pub/Sub, with MongoDB and PostgreSQL kept in sync. </p>
+            <ul class="facts"><li><a href="https://himira.co.in/" target="_blank" rel="noopener">Live on Himira ↗</a></li><li>Beckn Protocol</li></ul>
+          </div>
+          <div class="work-meta mono"><strong>Open commerce</strong><span>Node.js · Go · Pub/Sub</span></div>
+        </div>
+      </li>
+      <li>
+        <div class="work-item">
+          <div>
+            <h3>iGaming platform services</h3>
+            <p>Wallets, live payments and cashback for casino platforms, with real-time updates over WebSockets and background jobs on queues. Plugged in external game providers through signed webhooks.</p>
+            <ul class="facts"><li>Thousands of concurrent players</li><li>3 game providers</li></ul>
+          </div>
+          <div class="work-meta mono"><strong>iGaming</strong><span>Node.js · Redis · BullMQ</span></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <p class="label">Toolbox</p>
+  <div class="section-body">
+    <h2>What I reach for</h2>
+      <div class="stack-group"><h3 class="label">Languages</h3><ul class="stack"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/go);--c:#00ADD8" aria-hidden="true"></span><span>Go</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/typescript);--c:#3178C6" aria-hidden="true"></span><span>TypeScript</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/javascript);--c:#E8C600" aria-hidden="true"></span><span>JavaScript</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/python);--c:#3776AB" aria-hidden="true"></span><span>Python</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/cplusplus);--c:#00599C" aria-hidden="true"></span><span>C++</span></li></ul></div>
+      <div class="stack-group"><h3 class="label">Services and UI</h3><ul class="stack"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/nodedotjs);--c:#5FA04E" aria-hidden="true"></span><span>Node.js</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/express)" aria-hidden="true"></span><span>Express</span></li><li><span class="mono-icon" style="--c:#00ACD7" aria-hidden="true">Fi</span><span>Fiber</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/react);--c:#149ECA" aria-hidden="true"></span><span>React</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/tailwindcss);--c:#06B6D4" aria-hidden="true"></span><span>Tailwind</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/socketdotio)" aria-hidden="true"></span><span>Socket.IO</span></li></ul></div>
+      <div class="stack-group"><h3 class="label">Streaming</h3><ul class="stack"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/apachekafka)" aria-hidden="true"></span><span>Kafka</span></li><li><span class="mono-icon" style="--c:#E2401B" aria-hidden="true">Rp</span><span>Redpanda</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/natsdotio);--c:#27AAE1" aria-hidden="true"></span><span>NATS</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/googlepubsub);--c:#4285F4" aria-hidden="true"></span><span>Pub/Sub</span></li><li><span class="mono-icon" style="--c:#E0234E" aria-hidden="true">Bq</span><span>BullMQ</span></li><li><span class="mono-icon" style="--c:#4285F4" aria-hidden="true">Pb</span><span>Protobuf</span></li></ul></div>
+      <div class="stack-group"><h3 class="label">Data</h3><ul class="stack"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/postgresql);--c:#4169E1" aria-hidden="true"></span><span>PostgreSQL</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/clickhouse);--c:#E8B800" aria-hidden="true"></span><span>ClickHouse</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/mongodb);--c:#47A248" aria-hidden="true"></span><span>MongoDB</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/redis);--c:#FF4438" aria-hidden="true"></span><span>Redis</span></li><li><span class="mono-icon" style="--c:#8A63D2" aria-hidden="true">Pe</span><span>Pebble</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/prisma)" aria-hidden="true"></span><span>Prisma</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/sequelize);--c:#52B0E7" aria-hidden="true"></span><span>Sequelize</span></li></ul></div>
+      <div class="stack-group"><h3 class="label">Auth</h3><ul class="stack"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/jsonwebtokens)" aria-hidden="true"></span><span>JWT</span></li><li><span class="mono-icon" style="--c:#EB5424" aria-hidden="true">OA</span><span>OAuth 2.0</span></li><li><span class="mono-icon" style="--c:#DD344C" aria-hidden="true">Co</span><span>Cognito</span></li></ul></div>
+      <div class="stack-group"><h3 class="label">Infra and observability</h3><ul class="stack"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/kubernetes);--c:#326CE5" aria-hidden="true"></span><span>Kubernetes</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/docker);--c:#2496ED" aria-hidden="true"></span><span>Docker</span></li><li><span class="mono-icon" style="--c:#FF9900" aria-hidden="true">AWS</span><span>AWS</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/nginx);--c:#009639" aria-hidden="true"></span><span>Nginx</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/prometheus);--c:#E6522C" aria-hidden="true"></span><span>Prometheus</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/grafana);--c:#F46800" aria-hidden="true"></span><span>Grafana</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/git);--c:#F05032" aria-hidden="true"></span><span>Git</span></li></ul></div>
+      <div class="stack-group"><h3 class="label">AI pair-programming</h3><ul class="stack"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/claude);--c:#D97757" aria-hidden="true"></span><span>Claude</span></li><li><span class="mono-icon" style="--c:#10A37F" aria-hidden="true">Cx</span><span>Codex</span></li></ul></div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <p class="label">Experience</p>
+  <div class="section-body">
+    <h2>Where I've worked</h2>
+    <ol class="timeline">
+      <li class="now">
+        <p class="mono">Apr 2026 – present · Bengaluru, hybrid</p>
+        <h3>Software Engineer <span>· Sechpoint</span></h3>
+        <p>Telecom backends in Go, where throughput and correctness both matter.</p>
+        <ul class="bullets">
+          <li>Redesigned a stateful stream processor: four moving parts (Redis, Lua, PostgreSQL, NATS) became one partition-owned Go runtime on Redpanda with embedded storage, holding 329k records/s.</li>
+          <li>Made it crash-safe through ordered commits, an outbox and timestamp-based dedup, so a restart never double-counts.</li>
+          <li>Built a multi-pipeline ETL engine with backpressure, retries and dead-letter routing that processes 1M records in 6.5 seconds.</li>
+        </ul>
+        <ul class="chips"><li>Go</li><li>Redpanda</li><li>Kafka</li><li>ClickHouse</li><li>Kubernetes</li></ul>
+      </li>
+      <li>
+        <p class="mono">Nov 2025 – Mar 2026 · Bengaluru, hybrid</p>
+        <h3>Solution Engineer <span>· GammaStack</span></h3>
+        <p>Multi-service Node.js backends for an iGaming platform, handling payments and player flows.</p>
+        <ul class="bullets">
+          <li>Shipped real-time features over Socket.IO and Redis for low-latency updates to players.</li>
+          <li>Moved heavy work onto BullMQ background jobs and added caching, keeping APIs fast and non-blocking.</li>
+          <li>Integrated external game providers through verified webhooks and hardened uptime across the services.</li>
+        </ul>
+        <ul class="chips"><li>Node.js</li><li>Socket.IO</li><li>Redis</li><li>BullMQ</li></ul>
+      </li>
+      <li>
+        <p class="mono">Jan 2024 – Oct 2025 · On-site</p>
+        <h3>Associate Software Engineer <span>· Wits Innovation Lab</span></h3>
+        <p>Where I learned the trade, mostly on an ONDC buyer app and its seller-side services.</p>
+        <ul class="bullets">
+          <li>Built secure session handling with access and refresh tokens, and Razorpay payments and refunds that follow ONDC rules.</li>
+          <li>Took a slow endpoint from 7s to under 500ms by fixing N+1 queries, then added Redis caching and rate limiting for peak traffic.</li>
+          <li>Ran seller catalog refreshes through Google Pub/Sub, and led a team of four by the end.</li>
+        </ul>
+        <ul class="chips"><li>Node.js</li><li>Prisma</li><li>PostgreSQL</li><li>Redis</li><li>Pub/Sub</li></ul>
+      </li>
+      <li class="early">
+        <p class="mono">Oct 2022 – Jun 2024 · Ludhiana, part-time</p>
+        <h3>Training and Placement Cell <span>· GNDEC, Ludhiana</span></h3>
+        <p>Started as an SDE intern building the cell's tools in React and MySQL, then led the technical team for my final year.</p>
+        <ul class="chips"><li>Technical Team Leader</li><li>SDE Intern</li><li>Executive member</li></ul>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="education">
+  <p class="label">Education</p>
+  <div class="section-body">
+    <div class="edu">
+      <div class="edu-main">
+        <p class="mono muted">2020 – 2024</p>
+        <h3>B.Tech in Information Technology</h3>
+        <p>Guru Nanak Dev Engineering College, Ludhiana</p>
+        <p class="muted">I.K. Gujral Punjab Technical University</p>
+      </div>
+      <div class="edu-score">
+        <b>8.7</b><span>/ 10 GPA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <p class="label">Contact</p>
+  <div class="section-body">
+    <h2>Hiring for backend, platform or full-stack? Let's talk.</h2>
+    <p>I'm based in Bengaluru and open to relocation or remote roles.</p>
+    <dl class="links mono">
+      <div><dt class="muted">Email</dt><dd><a href="mailto:prabhkiratsingh66@gmail.com">prabhkiratsingh66@gmail.com</a></dd></div>
+      <div><dt class="muted">GitHub</dt><dd><a href="https://github.com/PrabhWarrior" target="_blank" rel="noopener">github.com/PrabhWarrior</a></dd></div>
+      <div><dt class="muted">LinkedIn</dt><dd><a href="https://www.linkedin.com/in/prabhkirat-singh-5222701a2/" target="_blank" rel="noopener">linkedin.com/in/prabhkirat-singh-5222701a2</a></dd></div>
+      <div><dt class="muted">LeetCode</dt><dd><a href="https://leetcode.com/prabhkiratsingh65/" target="_blank" rel="noopener">leetcode.com/prabhkiratsingh65</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+</main>
+<footer class="foot">Built with plain HTML, CSS and htmx.</footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/2.0.4/htmx.min.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
