@@ -546,3 +546,14 @@ img.pthumb { height: auto; }
 /* Badge: optically centre the uppercase label */
 .badge { display: inline-flex; align-items: center; line-height: 1; padding: 5px 10px 4px; }
 .fthumb.logo { position: relative; } .fthumb.logo img { position: absolute; inset: 0; margin: auto; height: 80%; width: auto; }
+.etype { display: block; margin: 1px 0 6px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); opacity: .75; }
+.card.exp .tl > li > div { display: flex; flex-direction: column; }
+.fthumb-link { position: relative; display: block; }
+.fthumb.diagram { object-fit: contain; object-position: center; background: #fff; padding: 6px; }
+.fthumb-link .zoom { position: absolute; right: 10px; bottom: 10px; padding: 4px 10px; border-radius: 999px; background: rgba(15,18,22,.78); color: #fff; font-size: 12px; font-weight: 600; opacity: 0; transition: opacity .2s; }
+.fthumb-link:hover .zoom, .fthumb-link:focus-visible .zoom { opacity: 1; }
+.fpoints { display: flex; flex-direction: column; gap: 6px; }
+.fpoints li { position: relative; padding-left: 16px; font-size: 14px; color: var(--muted); line-height: 1.45; }
+.fpoints li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.fpoints b { color: var(--fg); font-weight: 600; }
+.fpoints b { color: inherit; font-weight: inherit; }

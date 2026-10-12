@@ -32,16 +32,22 @@
 </section>
 <div class="fgrid">
     <article class="fcard">
-      <div class="fthumb art" aria-hidden="true"><span>Redpanda</span><i>→</i><span>Pebble</span><i>→</i><span>Outbox</span></div>
+      <a class="fthumb-link" href="assets/projects/quota-architecture.jpg" target="_blank" rel="noopener" title="Open full architecture diagram"><img class="fthumb diagram" src="assets/projects/quota-architecture-thumb.jpg" alt="Quota runtime architecture: per-worker process wiring with one Pebble instance and partition-owned consumers; the processor loop polls, batches and commits state, outbox entries and offsets atomically; background loops flush the outbox to Kafka, snapshot the ledger, fire timers, and recover from crashes on boot" loading="lazy" width="800" height="532"><span class="zoom">View diagram ↗</span></a>
       <div class="fbody">
         <span class="badge">Telecom</span>
         <h2>Quota runtime</h2>
-        <p>Rebuild of a telecom quota platform. A partition-owned Go runtime on Redpanda with embedded Pebble storage replaced a Redis, Lua, PostgreSQL and NATS system. A transactional outbox, strict commit order and timestamp dedup make crash replay safe, and an in-process timer wheel replaced the external scheduler. Benchmarked at 329k records/s across 64 partitions under production-mode settings.</p>
+        <p>Partitioned stream processor that rebuilt a telecom quota platform on Redpanda with embedded Pebble storage, replacing Redis, Lua, PostgreSQL and NATS. Benchmarked at 329k records/s across 64 partitions.</p>
+        <ul class="fpoints">
+          <li><b>Atomic commit:</b> state, outbox entries, consumer offset and clock in one Pebble batch, one fsync</li>
+          <li><b>Exactly-once state</b> via offsets and watermarks; at-least-once outbox flush to Kafka</li>
+          <li><b>Two streams per partition</b> (usage + commands) sharing one lock; commands idempotent via a guard key</li>
+          <li><b>Crash recovery:</b> restore clock, seek stored offset, re-send leftover outbox entries, resume</li>
+        </ul>
         <div class="pfoot"><ul class="facts"><li>Redpanda</li><li>Pebble</li><li>Kubernetes</li><li>Go</li></ul></div>
       </div>
     </article>
     <article class="fcard">
-      <div class="fthumb art" aria-hidden="true"><span>Kafka</span><i>→</i><span>Processors</span><i>→</i><span>ClickHouse</span></div>
+      <a class="fthumb-link" href="assets/projects/etl-architecture.jpg" target="_blank" rel="noopener" title="Open full architecture diagram"><img class="fthumb diagram" src="assets/projects/etl-architecture-thumb.jpg" alt="ETL engine architecture: a registry runs multiple engines; each pipeline flows from a Kafka source through a buffered queue, dispatcher, PII, unpack, validate and schema processors, a batcher and retry loop into ClickHouse, with backpressure monitoring and a Kafka dead-letter queue" loading="lazy" width="800" height="425"><span class="zoom">View diagram ↗</span></a>
       <div class="fbody">
         <span class="badge">Data platform</span>
         <h2>Multi-pipeline ETL engine</h2>
