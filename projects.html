@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Projects · Prabhkirat Singh</title>
+<meta name="description" content="Projects by Prabhkirat Singh: streaming runtimes, ETL pipelines, ONDC commerce, iGaming and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap" hx-boost="true" hx-target="#page" hx-select="#page" hx-swap="outerHTML show:window:top">
+<header class="top" id="top">
+  <a class="brand" href="index.html">Prabhkirat Singh</a>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html#about">About</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#skills">Stack</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#contact">Contact</a>
+    <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch theme"><span aria-hidden="true"></span></button>
+  </nav>
+</header>
+<main id="page">
+<section class="phero">
+  <a class="back" href="index.html#projects">← Back home</a>
+  <h1>Projects</h1>
+  <p class="muted">Systems I've designed at work, products I've shipped, and a few smaller builds.</p>
+</section>
+<div class="fgrid">
+    <article class="fcard">
+      <div class="fthumb art" aria-hidden="true"><span>Redpanda</span><i>→</i><span>Pebble</span><i>→</i><span>Outbox</span></div>
+      <div class="fbody">
+        <span class="badge">Telecom</span>
+        <h2>Quota runtime</h2>
+        <p>Rebuild of a telecom quota platform. A partition-owned Go runtime on Redpanda with embedded Pebble storage replaced a Redis, Lua, PostgreSQL and NATS system. A transactional outbox, strict commit order and timestamp dedup make crash replay safe, and an in-process timer wheel replaced the external scheduler. Benchmarked at 329k records/s across 64 partitions under production-mode settings.</p>
+        <div class="pfoot"><ul class="facts"><li>Redpanda</li><li>Pebble</li><li>Kubernetes</li><li>Go</li></ul></div>
+      </div>
+    </article>
+    <article class="fcard">
+      <div class="fthumb art" aria-hidden="true"><span>Kafka</span><i>→</i><span>Processors</span><i>→</i><span>ClickHouse</span></div>
+      <div class="fbody">
+        <span class="badge">Data platform</span>
+        <h2>Multi-pipeline ETL engine</h2>
+        <p>A self-built Fluentd alternative. Many pipelines run in one deployment, each a YAML file: any source (Kafka, Redpanda, NATS, REST) to any sink (ClickHouse, PostgreSQL, MongoDB), with processors for validation, PII masking and array unpacking. Ordered or unordered processing, batching by size or time, backpressure, retries and dead-letter routing. Processes 1M records in 6.5s, 33% faster after tuning, on Kubernetes with KEDA.</p>
+        <div class="pfoot"><ul class="facts"><li>Kafka</li><li>NATS</li><li>ClickHouse</li><li>KEDA</li></ul></div>
+      </div>
+    </article>
+    <article class="fcard">
+      <img class="fthumb" src="assets/projects/himira.jpg" alt="Screenshot of Himira · ONDC" loading="lazy" width="800" height="363">
+      <div class="fbody">
+        <span class="badge">Open commerce</span>
+        <h2>Himira · ONDC</h2>
+        <p>Microservices integrated with ONDC (Beckn Protocol) for a government-backed e-commerce platform, powering both buyer and seller apps. An event-driven pipeline on Google Pub/Sub handles high-volume async processing; Zlib-compressed multi-seller search keeps large responses fast; batch jobs keep MongoDB and PostgreSQL in sync, monitored in Grafana.</p>
+        <div class="pfoot"><ul class="facts"><li>Node.js</li><li>Pub/Sub</li><li>MongoDB</li><li>PostgreSQL</li><li>Grafana</li></ul><a class="plink" href="https://himira.co.in/" target="_blank" rel="noopener">Live ↗</a></div>
+      </div>
+    </article>
+    <article class="fcard">
+      <img class="fthumb" src="assets/projects/jeetabet.jpg" alt="Screenshot of JeetaBet" loading="lazy" width="800" height="363">
+      <div class="fbody">
+        <span class="badge">iGaming</span>
+        <h2>JeetaBet</h2>
+        <p>Backend services for a high-scale iGaming platform with sportsbook and casino features. Real-time betting workflows and event-driven systems handle live odds, player interactions and payments, with caching and async processing keeping it reliable under heavy concurrent traffic.</p>
+        <div class="pfoot"><ul class="facts"><li>Node.js</li><li>Redis</li><li>Socket.IO</li><li>BullMQ</li></ul><a class="plink" href="https://www.jeetabet.com/" target="_blank" rel="noopener">Live ↗</a></div>
+      </div>
+    </article>
+    <article class="fcard">
+      <img class="fthumb" src="assets/projects/planit.jpg" alt="Screenshot of Plan It" loading="lazy" width="800" height="363">
+      <div class="fbody">
+        <span class="badge">SaaS</span>
+        <h2>Plan It</h2>
+        <p>A Jira-style task management platform with real-time collaboration over WebSockets, JWT authentication and role-based access control. MongoDB aggregation queries tuned with Mongoose for 25% faster responses.</p>
+        <div class="pfoot"><ul class="facts"><li>Node.js</li><li>MongoDB</li><li>WebSockets</li><li>JWT</li></ul><a class="plink" href="https://planit.thewitslab.com/" target="_blank" rel="noopener">Live ↗</a></div>
+      </div>
+    </article>
+    <article class="fcard">
+      <img class="fthumb" src="assets/projects/tnpgndec.jpg" alt="Screenshot of T&amp;P Portal" loading="lazy" width="800" height="363">
+      <div class="fbody">
+        <span class="badge">Portal</span>
+        <h2>T&amp;P Portal</h2>
+        <p>Placement portal for GNDEC students: queries, company drives and announcements. Laravel and PHP on the backend, reusable React components on the front, and MySQL query tuning that cut data load time by 20%.</p>
+        <div class="pfoot"><ul class="facts"><li>React</li><li>PHP</li><li>Laravel</li><li>MySQL</li></ul><a class="plink" href="https://www.tnpgndec.com/" target="_blank" rel="noopener">Live ↗</a></div>
+      </div>
+    </article>
+    <article class="fcard">
+      <div class="fthumb logo"><img src="assets/projects/lawanlegal-logo.png" alt="Law &amp; Legal logo" loading="lazy" width="320" height="322"></div>
+      <div class="fbody">
+        <span class="badge">Website</span>
+        <h2>Law &amp; Legal</h2>
+        <p>Website designed for an advocate's law firm: practice areas, sectors, people, an insights blog for client alerts and news, and enquiry and appointment forms. Built on WordPress with Elementor.</p>
+        <div class="pfoot"><ul class="facts"><li>WordPress</li><li>Elementor</li><li>PHP</li></ul><a class="plink" href="https://lawanlegal.in/" target="_blank" rel="noopener">Live ↗</a></div>
+      </div>
+    </article>
+    <article class="fcard">
+      <img class="fthumb" src="assets/projects/guessNumber.jpg" alt="Screenshot of Guess the Number" loading="lazy" width="800" height="363">
+      <div class="fbody">
+        <span class="badge">Frontend</span>
+        <h2>Guess the Number</h2>
+        <p>A number guessing game in vanilla JavaScript, with DOM-driven UI updates, instant feedback and game state handling.</p>
+        <div class="pfoot"><ul class="facts"><li>JavaScript</li><li>CSS</li></ul><a class="plink" href="https://guess-number-lovat.vercel.app/" target="_blank" rel="noopener">Live ↗</a></div>
+      </div>
+    </article>
+    <article class="fcard">
+      <img class="fthumb" src="assets/projects/packingList.jpg" alt="Screenshot of Packing List" loading="lazy" width="800" height="363">
+      <div class="fbody">
+        <span class="badge">Frontend</span>
+        <h2>Packing List</h2>
+        <p>A React packing list for trips: add, remove and tick off items with clean state management.</p>
+        <div class="pfoot"><ul class="facts"><li>React</li><li>JavaScript</li></ul><a class="plink" href="https://packing-list-ochre.vercel.app/" target="_blank" rel="noopener">Live ↗</a></div>
+      </div>
+    </article>
+</div>
+</main>
+<footer class="foot">
+  <span>© 2026 Prabhkirat Singh</span>
+  <a href="#top" class="to-top">Back to top ↑</a>
+</footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/2.0.4/htmx.min.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

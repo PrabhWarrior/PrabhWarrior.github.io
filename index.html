@@ -17,9 +17,9 @@
   <a class="brand" href="index.html">Prabhkirat Singh</a>
   <nav class="nav" aria-label="Main">
     <a href="index.html#about">About</a>
-    <a href="index.html#work">Work</a>
-    <a href="index.html#skills">Stack</a>
     <a href="index.html#experience">Experience</a>
+    <a href="index.html#skills">Stack</a>
+    <a href="index.html#projects">Projects</a>
     <a href="index.html#contact">Contact</a>
     <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch theme"><span aria-hidden="true"></span></button>
   </nav>
@@ -79,22 +79,6 @@
     </ol>
   </section>
 
-  <section class="card work" id="work">
-    <p class="mini">Work</p>
-    <ul class="proj">
-      <li><h3>Quota runtime</h3><p>Partition-owned runtime on Redpanda with embedded Pebble state, replacing Redis, Lua and NATS. 329k records/s across 64 partitions, crash-safe via outbox and dedup.</p><ul class="facts"><li>Redpanda</li><li>Pebble</li><li>Kubernetes</li></ul></li>
-      <li><h3>Multi-pipeline ETL engine</h3><p>Fluentd alternative with YAML pipelines from Kafka, Redpanda or NATS into ClickHouse, PostgreSQL or MongoDB. 1M records in 6.5s, 33% faster after tuning.</p><ul class="facts"><li>Kafka</li><li>ClickHouse</li><li>KEDA</li></ul></li>
-      <li><h3>ONDC integration</h3><p>Buyer–seller microservices on India's government-backed ONDC network (Beckn Protocol). Event-driven on Pub/Sub, Zlib-compressed multi-seller search, MongoDB ↔ PostgreSQL sync pipelines, monitored in Grafana.</p><ul class="facts"><li><a href="https://himira.co.in/" target="_blank" rel="noopener">Live on Himira ↗</a></li><li>Pub/Sub</li><li>Grafana</li></ul></li>
-      <li><h3>iGaming services</h3><p>Wallets, payments and cashback for casino platforms, with live updates over WebSockets and external game providers wired in via webhooks.</p><ul class="facts"><li><a href="https://www.jeetabet.com/" target="_blank" rel="noopener">Live on JeetaBet ↗</a></li><li>WebSockets</li><li>Redis</li></ul></li>
-      <li><h3>Plan It</h3><p>Jira-style task platform with real-time collaboration over WebSockets, JWT auth and RBAC. Tuned MongoDB aggregations for 25% faster responses.</p><ul class="facts"><li><a href="https://planit.thewitslab.com/" target="_blank" rel="noopener">Live ↗</a></li><li>WebSockets</li><li>MongoDB</li></ul></li>
-    </ul>
-    <p class="also"><span class="mini">Also built</span>
-      <a href="https://www.tnpgndec.com/" target="_blank" rel="noopener">T&amp;P Portal ↗</a>
-      <a href="https://guess-number-lovat.vercel.app/" target="_blank" rel="noopener">Guess the Number ↗</a>
-      <a href="https://packing-list-ochre.vercel.app/" target="_blank" rel="noopener">Packing List ↗</a>
-    </p>
-  </section>
-
   <section class="card stack-card" id="skills">
     <p class="mini">Stack &amp; tools</p>
     <div class="sgs">
@@ -105,6 +89,30 @@
         <div class="sg"><p class="mini">Auth</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/jsonwebtokens)" aria-hidden="true"></span><span>JWT</span></li><li><span class="mono-icon" style="--c:#EB5424" data-mono="OA" aria-hidden="true"></span><span>OAuth 2.0</span></li><li><span class="mono-icon" style="--c:#DD344C" data-mono="Co" aria-hidden="true"></span><span>Cognito</span></li></ul></div>
         <div class="sg"><p class="mini">Infra and observability</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/kubernetes);--c:#326CE5" aria-hidden="true"></span><span>Kubernetes</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/docker);--c:#2496ED" aria-hidden="true"></span><span>Docker</span></li><li><span class="mono-icon" style="--c:#FF9900" data-mono="AWS" aria-hidden="true"></span><span>AWS</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/nginx);--c:#009639" aria-hidden="true"></span><span>Nginx</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/prometheus);--c:#E6522C" aria-hidden="true"></span><span>Prometheus</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/grafana);--c:#F46800" aria-hidden="true"></span><span>Grafana</span></li><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/git);--c:#F05032" aria-hidden="true"></span><span>Git</span></li></ul></div>
         <div class="sg"><p class="mini">AI pair-programming</p><ul class="stack-mini"><li><span class="icon" style="--i:url(https://cdn.simpleicons.org/claude);--c:#D97757" aria-hidden="true"></span><span>Claude</span></li><li><span class="mono-icon" style="--c:#10A37F" data-mono="Cx" aria-hidden="true"></span><span>Codex</span></li></ul></div>
+    </div>
+  </section>
+
+  <section class="card projects" id="projects">
+    <div class="phead"><p class="mini">Projects</p><a class="plink" href="projects.html">View all projects →</a></div>
+    <div class="pgrid">
+      <article class="pcard">
+        <span class="badge">Telecom</span>
+        <h3>Quota runtime</h3>
+        <p>Partition-owned runtime on Redpanda with embedded Pebble state, replacing Redis, Lua and NATS. Crash-safe via outbox and dedup.</p>
+        <div class="pfoot"><ul class="facts"><li>Redpanda</li><li>Pebble</li><li>Kubernetes</li></ul></div>
+      </article>
+      <article class="pcard">
+        <span class="badge">Data platform</span>
+        <h3>Multi-pipeline ETL engine</h3>
+        <p>Fluentd alternative: YAML pipelines from Kafka, Redpanda or NATS into ClickHouse, PostgreSQL or MongoDB, with backpressure and DLQ.</p>
+        <div class="pfoot"><ul class="facts"><li>Kafka</li><li>NATS</li><li>ClickHouse</li></ul></div>
+      </article>
+      <article class="pcard">
+        <span class="badge">Open commerce</span>
+        <h3>Himira · ONDC</h3>
+        <p>Buyer–seller microservices on India's government-backed ONDC network. Event-driven on Pub/Sub, compressed multi-seller search, MongoDB ↔ PostgreSQL sync.</p>
+        <div class="pfoot"><ul class="facts"><li>Node.js</li><li>Pub/Sub</li><li>MongoDB</li></ul><a class="plink" href="https://himira.co.in/" target="_blank" rel="noopener">Live ↗</a></div>
+      </article>
     </div>
   </section>
 
